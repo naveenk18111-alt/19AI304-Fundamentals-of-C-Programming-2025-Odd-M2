@@ -1,341 +1,230 @@
-# 19AI304-Fundamentals-of-C-Programming-2025-Odd-M2
-# IAPR-2- Module 2 - FoC
-## 3. Implementation of programs using conditional statements.
-## 4. Implementation of programs using various control statements.
-# Ex.No:6
-  Build a C program to input a student’s marks in three subjects (Math, Science, and English). Calculate the average marks and determine the grade using nested if-else statements with safe floating-point comparisons based on the following grading criteria:
-    
-  A: 90 and above
-  
-  B: 75 to 89.99
-  
-  C: 50 to 74.99
-  
-  F: below 50
-  
-  The program should display the average marks up to two decimal places and the corresponding grade. 
-  
-# Date : 28/04/2026
-# Aim:
- To build a C program that receives inputs for a student’s marks in three subjects, calculates the average, and determines the grade using nested if-else statements with safe floating-point comparisons.
-# Algorithm:
-### Step 1:
-  Start
-### Step 2: 
-  Include the standard input-output library: #include<stdio.h>.
-### Step 3: 
-  Declare float variables math, science, english to store marks of each subject.
-### Step 4: 
-  Declare a float variable average to store the average marks.
-### Step 5: 
-  Prompt the user to enter marks for Math, Science, and English.
-### Step 6: 
-  Read the input marks.
-### Step 7: 
-  Calculate the average marks using the formula:
-   
-  average=(math + science + english​)/3.0f
-### Step 8: 
-  Check if average is greater than or equal to 90.0f
+# EX-06 - Looping
 
-  If yes, print Grade A.
+## AIM:
 
-  Else, proceed to Step 9.  
-### Step 9:
-  Check if average is greater than or equal to 75.0f
+Write a C program to print even numbers ranging from M to N (including M and N values).
 
-  If yes, print Grade B.
+## ALGORITHM:
 
-  Else, proceed to Step 10.
-### Step 10:
-  Check if average is greater than or equal to 50.0f
+1. Declare two integer variables to store the values of M and N.
+2. Use the printf function to prompt the user to enter the values of M and N.
+3. Use the scanf function to read the values of M and N from the user.
+4. Use a loop (for or while) to iterate from M to N.
+5. Inside the loop, check if the current number is even.
+6. If the current number is even, print it.
+7. Continue the loop until you have iterated through all numbers from M to N.
 
-  If yes, print Grade C.
+## PROGRAM:
 
-  Else, print Grade F.
-### Step 11:
-  Stop
-# Program:
-```c
-#include<stdio.h>
-int main(){
-    float math,science,english,average;
-    printf("Enter marks for Math, Science and English: ");
-    scanf("%f %f %f",&math,&science,&english);
-    average=(math+science+english)/3.0f;
-    if(average>=90.0f)
-        printf("Grade A\n");
-    else if(average>=75.0f)
-        printf("Grade B\n");
-    else if(average>=50.0f)
-        printf("Grade C\n");
-    else
-        printf("Grade F\n");
-    return 0;
-}
 ```
-# Output:
-<img width="650" height="261" alt="image" src="https://github.com/user-attachments/assets/663f8052-9e20-4662-948a-c67025ad477c" />
+#include <stdio.h>
 
-# Result: 
-Thus, the program was implemented and executed successfully, and the required output was obtained.
+int main() {
+    int M, N;
+    scanf("%d %d", &M, &N);
 
-# 19AI304-Fundamentals-of-C-Programming-2025-Odd-M2
-# IAPR-2- Module 2 - FoC
-# Ex.No:7
-  Develop a C program to display the multiplication table of a given number (15) up to 10.
-# Date : 28/04/2026
-# Aim:
- To develop a C program that prints the multiplication table of the number 15 up to 10 using a for loop.
-# Algorithm:
-### Step 1:
-  Start
-### Step 2: 
-  Include the standard input-output library: #include<stdio.h>.
-### Step 3: 
-  Declare an integer variable number and initialize it with 15.
-### Step 4: 
-  Declare another integer variable i to use as a loop counter.
-### Step 5: 
-  Use a for loop to iterate from i = 1 to i = 10.
-  
-  In each iteration:
-  
-  a. Multiply number by i.
-  
-  b. Print the result in the format: number x i = result.
-### Step 6: 
-  Stop
-
-# Program:
-```c
-#include<stdio.h>
-int main(){
-    int number=15,i;
-    for(i=1;i<=10;i++){
-        printf("%d x %d = %d\n",number,i,number*i);
-    }
-    return 0;
-}
-```
-# Output:
-<img width="661" height="491" alt="image" src="https://github.com/user-attachments/assets/cd7087fd-fd54-4400-9390-b0097818b366" />
-
-# Result: 
-Thus, the program was implemented and executed successfully, and the required output was obtained.
-
-# 19AI304-Fundamentals-of-C-Programming-2025-Odd-M2
-# IAPR-2- Module 2 - FoC
-# Ex.No:8
-  Develop a C program to check whether a given number is prime or not.
-# Date : 28/04/2026
-# Aim:
- To develop a C program that determines whether an input number is a prime number using a while loop.
-# Algorithm:
-### Step 1:
-  Start
-### Step 2: 
-  Include the standard input-output library: #include<stdio.h>.
-### Step 3: 
-  Declare integer variables:
-  
-  n to store the number entered by the user.
-  
-  i to use as a counter (initialize to 2).
-  
-  f as a flag to indicate whether the number is divisible (initialize to 0).
-### Step 4: 
-  Read the value of n from the user.
-### Step 5: 
-  Use a while loop to iterate while i <= n-1:
-  
-  Check if n % i == 0:
-
-  If yes, set f = 1 (number is not prime) and break the loop.
-  
-  Increment i by 1.
-### Step 6: 
-  After the loop:
-  
-  If f == 0, print that the number is prime.
-  
-  Else, print that the number is not prime.
-### Step 7:   
-  Stop
-# Program:
-```c
-#include<stdio.h>
-int main(){
-    int n, i = 2, f = 0;
-    scanf("%d", &n);
-    while(i <= n - 1){
-        if(n % i == 0){
-            f = 1;
-            break;
+    for (int i = M; i <= N; i++) {
+        if (i % 2 == 0) {
+            printf("%d ", i);
         }
-        i++;
     }
-    if(f == 0 && n > 1)
-        printf("%d is a prime number.\n", n);
-    else
-        printf("%d is not a prime number.\n", n);
+
+    printf("\n");
     return 0;
 }
+
 ```
-# Output:
-<img width="520" height="267" alt="image" src="https://github.com/user-attachments/assets/a7e9c7b5-d67c-4760-8e3f-5fb886357856" />
 
-# Result: 
-Thus, the program was implemented and executed successfully, and the required output was obtained.
+## OUTPUT:
+<img width="1268" height="748" alt="M21" src="https://github.com/user-attachments/assets/d996f589-b9e1-460e-80fd-d0584e9cdf6a" />
 
 
-# 19AI304-Fundamentals-of-C-Programming-2025-Odd-M2
-# IAPR-2- Module 2 - FoC
-# Ex.No:9
-  Generate the C code to display the pattern below.  
- ``` 
- 12345  
- 2   4  
- 3   3  
- 4   2  
- 54321
- ```
-# Date : 28/04/2026
-# Aim:
- To build a C program that prints the required numeric pattern for a given value of n using nested loops.
-# Algorithm:
-### Step 1:
-  Start
-### Step 2: 
-  Include the standard input-output library: #include<stdio.h>.
-### Step 3: 
-  Declare variables i, j, n, and k.
-### Step 4: 
-  Read the value of n from the user.
-### Step 5: 
-  Set i = 1.
-### Step 6:  
-  Repeat the following steps until i > n:
-  
-  Step 6.1: For j from i to n, print j if i == 1 or j == i, otherwise print a space.
-  
-  Step 6.2: Set k = j - 2.
-  
-  Step 6.3: For j from 1 to i - 1, print k if i == n or j == i - 1, otherwise print a space.
-  
-  Step 6.4: Decrease k after each print.
-  
-  Step 6.5: Move to the next line.
-  
-### Step 7: 
-  Increase i and repeat Step 6.
-### Step 8:   
-  Stop
-# Program:
-```c
-#include<stdio.h>
+## RESULT:
 
-int main(){
-    int n, i, j, k;
+Thus the program to print even numbers ranging from M to N (including M and N values) has been executed successfully
+
+# EX-07-Nested-loop
+
+## AIM:
+
+Write a C program to print the given triangular pattern using loop.
+
+## ALGORITHM:
+
+1. Declare a variable to store the number of rows in the triangle.
+2. Use the printf function to prompt the user to enter the number of rows.
+3. Use a loop (for or while) to iterate through each row.
+4. Inside the loop, use another loop to print the desired number of asterisks for each row.
+5. Continue the loop until you have printed the entire triangular pattern.
+
+## PROGRAM:
+
+```
+#include <stdio.h>
+
+int main() {
+    int n;
     scanf("%d", &n);
-    
-    for(i = 1; i <= n; i++){
-        for(j = i; j <= n; j++){
-            if(i == 1 || j == i)
-                printf("%d", j);
-            else
-                printf(" ");
-        }
-        k = j - 2;
-        for(j = 1; j <= i - 1; j++){
-            if(i == n || j == i - 1)
-                printf("%d", k);
-            else
-                printf(" ");
-            k--;
+
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= i; j++) {
+            printf("*");
         }
         printf("\n");
     }
-    
+
     return 0;
 }
+
 ```
-# Output:
-<img width="685" height="432" alt="image" src="https://github.com/user-attachments/assets/0b6f57c1-ae09-4b7b-a8b2-7cd6eec9425e" />
 
-# Result: 
-  Thus, the program was implemented and executed successfully, and the required output was obtained.
+## OUTPUT:
 
-  
-# 19AI304-Fundamentals-of-C-Programming-2025-Odd-M2
-# IAPR-2- Module 2 - FoC
-# Ex.No:10
-  Generate the C code to display the pattern below.  
-  
- 0
- 
- 7  0  7
- 
- 6  7  0  7  6
- 
- 5  6  7  0  7  6  5
- 
- 4  5  6  7  0  7  6  5  4
- 
- 3  4  5  6  7  0  7  6  5  4  3
- 
- 2  3  4  5  6  7  0  7  6  5  4  3  2
- 
- 1  2  3  4  5  6  7  0  7  6  5  4  3  2  1
+<img width="1258" height="749" alt="M22" src="https://github.com/user-attachments/assets/90414b84-ea80-459f-a4f7-280a0cd308fc" />
 
-# Aim: 
-  To formulate a C program to print a symmetric numeric pattern in which each row contains an increasing sequence of numbers from the row value up to 7, followed by 0 in the center, and then a decreasing sequence of numbers back to the row value.
-# Algorithm:
-### Step 1:
-  Start
-### Step 2: 
-  Include the standard input-output library: #include<stdio.h>.
-### Step 3: 
-  Declare integer variables i and j.
-### Step 4: 
-  Print 0 on the first line.
-### Step 5:
-  Set i = 7.
-### Step 6:
-   Repeat Steps 6.1 to 6.4 while `i >= 1`:
 
-   Step 6.1: For `j = i` to `7`, print `j`.
+## RESULT:
 
-   Step 6.2: Print `0` in the center.
+Thus the program to print the given triangular pattern using loop has been executed successfully
 
-   Step 6.3: For `j = 7` down to `i`, print `j`.
+# EX-08-Functions
 
-   Step 6.4: Move to the next line.
-### Step 7:
-  Decrease i by 1 and go back to Step 6.
-### Step 8:
-  Stop
-# Program:
-```c
-#include<stdio.h>
+## AIM:
 
-int main(){
-    int i, j;
-    printf("0\n");
-    for(i = 7; i >= 1; i--){
-        for(j = i; j <= 7; j++)
-            printf("%d ", j);
-        printf("0 ");
-        for(j = 7; j >= i; j--)
-            printf("%d ", j);
-        printf("\n");
+Write a C program to perform addition and subtraction of two numbers using functions (with argument and without return type).
+
+## ALGORITHM:
+
+1. Declare two functions, one for addition and one for subtraction. Both functions should take two integer arguments.
+2. Inside the addition & subtraction function, add & subtract the two numbers and print the result.
+3. In the main function, declare two integer variables and read their values from the user.
+4. Call the addition and subtraction functions, passing the two numbers as arguments.
+
+## PROGRAM:
+
+```
+#include <stdio.h>
+
+void add(int a, int b) {
+    printf("Addition: %d\n", a + b);
+}
+
+void subtract(int a, int b) {
+    printf("Subtraction: %d\n", a - b);
+}
+
+int main() {
+    int num1, num2;
+    scanf("%d %d", &num1, &num2);
+
+    add(num1, num2);
+    subtract(num1, num2);
+
+    return 0;
+}
+
+```
+
+## OUTPUT:
+
+<img width="1257" height="747" alt="M23" src="https://github.com/user-attachments/assets/69e00d47-b541-4015-a216-ae47cf1590bd" />
+
+
+## RESULT:
+
+Thus the program to perform addition and subtraction of two numbers using functions has been executed successfully
+
+# EX-09-Use For Loop
+
+## AIM:
+
+Write a c program to find the sum of odd digits using for loop
+
+## ALGORITHM:
+
+1. Declare variables to store the input number and the sum of odd digits.
+2. Initialize the sum of odd digits to 0.
+3. Use a for loop to iterate through each digit of the input number.
+4. Inside the loop, extract the rightmost digit of the number (using the modulo operator % and division by 10).
+5. If the digit is odd, add it to the sum of odd digits.
+6. Print the sum of odd digits.
+
+## PROGRAM:
+
+```
+#include <stdio.h>
+
+int main() {
+    int num, sum = 0, digit;
+    scanf("%d", &num);
+
+    for (; num != 0; num /= 10) {
+        digit = num % 10;
+        if (digit % 2 != 0) {
+            sum += digit;
+        }
     }
+
+    printf("%d\n", sum);
     return 0;
 }
+
 ```
-# Output:
-<img width="509" height="386" alt="image" src="https://github.com/user-attachments/assets/d7201649-3eff-4682-aa6a-2e7dac6202de" />
 
-# Result:
-  Thus, the program was implemented and executed successfully, and the required output was obtained.
+## OUTPUT:
+<img width="1265" height="747" alt="M24" src="https://github.com/user-attachments/assets/0a395081-1f58-465c-ab2f-e247e46aadb8" />
 
+
+## RESULT:
+
+Thus the program to find the sum of odd digits using for loop has been executed successfully.
+
+# EX – 10 - Factorial of a Number Using a Function
+
+## AIM:
+
+To write a C program that calculates the factorial of a given number using a user-defined function.
+
+## ALGORITHM:
+
+1. Start
+2. Declare the function fact().
+3. In the main() function, call the fact() function.
+4. In fact() function:
+   a. Declare variables i, N, and fact (initialized to 1).
+   b. Read an integer N from the user.
+   c. Use a for loop from 1 to N:
+   i. Multiply fact by i in each iteration.
+   d. After the loop, print the factorial value.
+5. End
+
+## PROGRAM:
+
+```
+#include <stdio.h>
+
+unsigned long long factorial(int n) {
+    unsigned long long fact = 1;
+    for (int i = 1; i <= n; i++) {
+        fact *= i;
+    }
+    return fact;
+}
+
+int main() {
+    int num;
+    scanf("%d", &num);
+
+    printf("Factorial of %d is %llu\n", num, factorial(num));
+    return 0;
+}
+
+```
+
+## OUTPUT:
+<img width="1260" height="762" alt="M25" src="https://github.com/user-attachments/assets/b39bf05b-cc88-4e0d-b7c6-7b97322d0e46" />
+
+
+## RESULT:
+
+The program correctly computes the factorial of a given number using a separate function and displays the result.
